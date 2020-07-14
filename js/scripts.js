@@ -8,10 +8,6 @@ function f_acc() {
     $('#accordeon .acc-body').not($(this).next()).slideUp(1000);
     $(this).next().slideToggle(500);
 
-
-
-
-
 }
 
 var swiper = new Swiper('.swiper-container', {
@@ -31,21 +27,20 @@ var swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     }
 
-
-
 });
 
 
-// $('.navigation').on('click', '.mobile_menu', function () {
-//     $(".navigation ul").slideToggle(400);
-// });
 
-// $('.header_menu').on('click', function () {
-//     $('.header_menu-hamburger').toggleClass('header_menu-hamburger-animate');
-//     $('.navigation').toggleClass('navigation-active');
-// }) 
 
 $('.header_menu').on('click', function () {
     $('.header_menu-hamburger').toggleClass('header_menu-hamburger-animate');
     $(".navigation ul").slideToggle(400);
 })
+
+//Scroll to anchor
+$("a.scrollLink").click(function (event) {
+    event.preventDefault();
+    $("html, body").animate({
+        scrollTop: $($(this).attr("href")).offset().top
+    }, 500);
+});
